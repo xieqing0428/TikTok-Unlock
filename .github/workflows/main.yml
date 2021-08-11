@@ -28,7 +28,7 @@ jobs:
           git pull --unshallow
           git remote add upstream https://github.com/Semporia/TikTok-Unlock.git
           git fetch upstream
-          git merge --no-commit --no-edit --rebase upstream/master
+          git merge --no-commit --no-edit upstream/master
           git diff HEAD --exit-code
           if [ $? -eq 0 ]; then
             echo "No changes to commit!"
