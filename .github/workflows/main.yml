@@ -5,6 +5,9 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches:
+      [ master ]
   schedule:
     - cron: '0 0 * * *' 
 
@@ -31,7 +34,7 @@ jobs:
           git config --global user.email 'workflowrobot@gmail.com'
           git remote add upstream https://github.com/Semporia/TikTok-Unlock.git
           git fetch upstream
-          git merge --no-commit --no-edit upstream/master
+          git merge --no-commit --no-edit upstream/${GITHUB_REF}
           
       - id: changed
         run: git diff --exit-code
@@ -42,4 +45,4 @@ jobs:
         if: ${{ steps.changed.outcome != 'failure' }}
         run: |
           git commit -m "workflow::robot Auto Fetch Upstream"
-          git push origin master
+          git push origin ${GITHUB_REF}
