@@ -32,20 +32,14 @@ jobs:
           git config --global user.name 'workflow::robot'
           git config --global user.email 'workflowrobot@gmail.com'
 
-      - name: Fetch Upstream
+      - name: Run Fetch
         run: |
           git fetch https://github.com/Semporia/TikTok-Unlock.git ${GITHUB_REF#refs/heads/}
           git merge --no-commit --no-edit 
-          
-      - name: Check Changes
-        id: changed
-        continue-on-error: true
-        run: 
-          git diff HEAD --exit-code
-        
-      - name: Ready Push
-        if: ${{ steps.changed.outcome != 'failure' }}
-        run: |
-          echo ${{ steps.changed.outcome }}
-          git commit -m "workflow::robot Auto Fetch Upstream"
-          git push origin ${GITHUB_REF#refs/heads/}
+          if [[ `git status --porcelain` ]]; then
+            # Changes
+            git commit -m "workflow::robot Auto Fetch Upstream"
+            git push origin ${GITHUB_REF#refs/heads/}
+          else
+            echo "No Commit"
+          fi
