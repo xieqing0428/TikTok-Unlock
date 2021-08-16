@@ -34,7 +34,6 @@ jobs:
         run: |
           git config --global user.name 'workflow::robot'
           git config --global user.email 'workflowrobot@gmail.com'
-          git pull --unshallow
           git remote add upstream https://github.com/Semporia/TikTok-Unlock.git
           git fetch upstream
           git merge --no-commit --no-edit upstream/master
