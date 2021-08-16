@@ -46,5 +46,6 @@ jobs:
       - name: Ready Push
         if: ${{ steps.changed.outcome != 'failure' }}
         run: |
+          echo ${{ steps.changed.outcome }}
           git commit -m "workflow::robot Auto Fetch Upstream"
           git push origin ${GITHUB_REF#refs/heads/}
