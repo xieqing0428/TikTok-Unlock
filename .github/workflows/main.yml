@@ -26,20 +26,22 @@ jobs:
         with:
           fetch-depth: 0
           ref: master
-
-      - name: Fetch Upstream
-        continue-on-error: true
+          
+      - name: Check Config
         run: |
           git config --global user.name 'workflow::robot'
           git config --global user.email 'workflowrobot@gmail.com'
-          git remote add upstream https://github.com/Semporia/TikTok-Unlock.git
-          git fetch upstream
-          git merge --no-commit --no-edit upstream/${GITHUB_REF#refs/heads/}
+
+      - name: Fetch Upstream
+        run: |
+          git fetch https://github.com/Semporia/TikTok-Unlock.git ${GITHUB_REF#refs/heads/}
+          git merge --no-commit --no-edit 
           
-      - id: changed
-        run: git diff HEAD --exit-code
+      - name: Check Changes
+        id: changed
         continue-on-error: true
-        name: Check Changes
+        run: 
+          git diff HEAD --exit-code
         
       - name: Ready Push
         if: ${{ steps.changed.outcome != 'failure' }}
