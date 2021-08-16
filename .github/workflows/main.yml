@@ -36,10 +36,15 @@ jobs:
           git config --global user.email 'workflowrobot@gmail.com'
           git remote add upstream https://github.com/Semporia/TikTok-Unlock.git
           git fetch upstream
-          git merge -m "workflow::robot Auto Fetch Upstream" --no-edit upstream/master
-          git diff HEAD --exit-code > /dev/null
-          if [ $? -eq 0 ]; then
-            echo "No changes to commit!"
-          else 
-            git push origin master
-          fi
+          git merge --no-commit --no-edit upstream/master
+          
+      - id: changed
+        run: git diff --exit-code
+        continue-on-error: true
+        name: Check Changes
+        
+      - name: Ready Push
+        if: ${{ steps.changed.outcome == 'failure' }}
+        run: |
+          git commit -m "workflow::robot Auto Fetch Upstream"
+          git push origin master
