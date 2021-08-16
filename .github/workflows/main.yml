@@ -44,7 +44,7 @@ jobs:
         name: Check Changes
         
       - name: Ready Push
-        if: ${{ steps.changed.outcome == 'failure' }}
+        if: ${{ steps.changed.outcome != 'failure' }}
         run: |
           git commit -m "workflow::robot Auto Fetch Upstream"
           git push origin master
