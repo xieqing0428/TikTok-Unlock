@@ -35,7 +35,7 @@ jobs:
       - name: Run Fetch
         run: |
           git fetch https://github.com/Semporia/TikTok-Unlock.git ${GITHUB_REF#refs/heads/}
-          git merge --no-commit --no-edit 
+          git merge ${GITHUB_REF#refs/heads/} --no-commit --no-edit 
           if [[ `git status --porcelain` ]]; then
             # Changes
             git commit -m "workflow::robot Auto Fetch Upstream"
