@@ -1,3 +1,6 @@
+#!name=TikTok
+#!desc=Remove TikTok's regional restrictions.
+
 [URL Rewrite]
 
 (?<=_region=)CN(?=&) JP 307
