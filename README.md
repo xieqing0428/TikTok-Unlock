@@ -8,7 +8,7 @@
 * [Loon](#Loon)
 * [Surge](#Surge)
 * [Shadowrocket](#Shadowrocket)
-
+* [下载 TikTok 21.1.0.ipa](https://drive.google.com/file/d/1oNABinDGQ-PjeweeA-pAfN00fw7lJmP_/view?usp=sharing)
 <!-- * [TikTok 去水印下载捷径](#去水印下载捷径) -->
 
 * [抖音無法觀看](#抖音)
