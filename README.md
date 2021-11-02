@@ -8,8 +8,6 @@
 * [Loon](#Loon)
 * [Surge](#Surge)
 * [Shadowrocket](#Shadowrocket)
-* [下载 TikTok 21.1.0.ipa](https://drive.google.com/file/d/1oNABinDGQ-PjeweeA-pAfN00fw7lJmP_/view?usp=sharing)
-<!-- * [TikTok 去水印下载捷径](#去水印下载捷径) -->
 
 * [抖音無法觀看](#抖音)
 
@@ -243,10 +241,6 @@ https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/Tik
 ```
 
 ---
-
-<!-- ### <a id="去水印下载捷径"> TikTok 去水印下载捷径 </a> -->
-
-<!-- [下载地址](https://www.icloud.com/shortcuts/b27ab05345e64b4a9c1b499648b4ea38) -->
 
 
 ### <a id="抖音"> 抖音無法觀看 </a>
