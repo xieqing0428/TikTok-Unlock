@@ -245,8 +245,6 @@ https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/Tik
 **支持系统**  
 * windows 11/windows 10/windows 8/windows 7（由于使用了 Fiddler 库，所以需要.Net 环境）
 
-<<<<<<< HEAD
-=======
 **使用方法**  
 
 **一、直接搜索方式**
